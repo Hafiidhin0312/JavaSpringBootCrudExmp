@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add Buku</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+</head>
+
+<body>
+<div class="container my-5">
+    <h3> Add Buku</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-10">
+                <form action="#" th:action="@{/buku/formaddbuku}" th:object="${buku}" method="get">
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="kodeBuku" class="col-form-label">Kode Buku</label> <input type="text" th:field="*{kodeBuku}" class="form-control" id="kodeBuku" placeholder="Kode Buku"> <span th:if="${#fields.hasErrors('kodeBuku')}" th:errors="*{kodeBuku}" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="namaBuku" class="col-form-label">Nama Buku</label> <input type="text" th:field="*{namaBuku}" class="form-control" id="namaBuku" placeholder="nama buku"> <span th:if="${#fields.hasErrors('namaBuku')}" th:errors="*{namaBuku}" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <label for="kodeKategori" class="col-form-label">Kode Kategori</label> <input type="text" th:field="*{kodeKategori}" class="form-control" id="kodeKategori" placeholder="Kode kategori"> <span th:if="${#fields.hasErrors('kodeKategori')}" th:errors="*{kodeKategori}" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="form-group col-md-8">
+                            <label for="harga" class="col-form-label">Harga</label> <input type="number" th:field="*{harga}" class="form-control" id="harga" placeholder="harga"> <span th:if="${#fields.hasErrors('harga')}" th:errors="*{harga}" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="submit" class="btn btn-primary" value="Add Buku">
+                        </div>
+
+                        <div class="form-group col-md-8"></div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
